@@ -35,4 +35,9 @@ public class StudentService {
     public void deleteStudent(Long id){
         studentRepository.deleteById(id);
     }
+
+    //find course
+    public List<Student> findByIdCourse(Long idCourse){
+        return studentRepository.findAllStudents(idCourse);
+    }
 }

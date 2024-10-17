@@ -29,13 +29,13 @@ public class StudentCotroller {
 
     //POST
     @PostMapping("/save")
-    public Student createStudent(@PathVariable Student student){
+    public Student createStudent(@RequestBody Student student){
         return studentService.saveStudent(student);
     }
 
     //PUT
     @PutMapping("/edit/{id}")
-    public Student editStudent(@PathVariable Student student, @PathVariable Long id){
+    public Student editStudent(@RequestBody Student student, @PathVariable Long id){
         student.setId(id);
         return studentService.updateStudent(student);
     }
@@ -44,5 +44,10 @@ public class StudentCotroller {
     @DeleteMapping("/delete/{id}")
     public void deleteStudent(@PathVariable Long id){
         studentService.deleteStudent(id);
+    }
+
+    @GetMapping("/search-course/{idCourse}")
+    public List<Student> findBtIdCourse(@PathVariable Long idCourse){
+        return studentService.findByIdCourse(idCourse);
     }
 }
