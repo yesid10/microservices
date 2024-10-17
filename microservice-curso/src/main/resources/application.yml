@@ -1,19 +1,19 @@
 server:
-  port: 8090
+  port: 9090
 
 spring:
   application:
-    name: msvc-student
+    name: msvc-curso
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/studentDb
-    username: root
-    password:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/coursesDb
+    username: yesid
+    password: yesid
   jpa:
     hibernate:
       ddl-auto: create
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
   config:
     import:
       - optional:configserver:http://localhost:8888
