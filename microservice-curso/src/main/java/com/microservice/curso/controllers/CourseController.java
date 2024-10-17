@@ -1,5 +1,6 @@
 package com.microservice.curso.controllers;
 
+import com.microservice.curso.http.response.StudentByCourseResponse;
 import com.microservice.curso.model.Course;
 import com.microservice.curso.services.ServiceCourse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,10 @@ public class CourseController {
     @DeleteMapping("/delete/{id}")
     public void deleteCourse(@PathVariable Long id){
         serviceCourse.deleteCourse(id);
+    }
+
+    @GetMapping("/student-course/{idCourse}")
+    public StudentByCourseResponse findStudentByCourse(@PathVariable Long idCourse){
+        return serviceCourse.findStudentsByIdCourse(idCourse);
     }
 }
