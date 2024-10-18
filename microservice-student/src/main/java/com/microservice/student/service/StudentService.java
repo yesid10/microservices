@@ -3,9 +3,11 @@ package com.microservice.student.service;
 import com.microservice.student.model.Student;
 import com.microservice.student.respository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudentService {
 
     @Autowired
